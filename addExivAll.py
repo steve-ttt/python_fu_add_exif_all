@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # exiv2 -M"set Exif.Image.Make Rolleiflex" -M"set Exif.Image.Model SL35e" 
-# -M"set Exif.Image.Software Adox Silvermax" -M"set Exif.Image.Artist Stephen THORLEY" $i;
+# -M"set Exif.Image.Software Adox Silvermax" -M"set Exif.Image.Artist me" $i;
 
 from gimpfu import *
 import gtk
@@ -17,12 +17,7 @@ entries = []
 
 
 def python_add_exif_all(strMake, strModel, strFilm, strName, strCopyRt) :
-    #print("hello world")
-    #pdb.gimp_message('This is displayed as a Pop-up message')
-    #pdb.gimp_message('%s,%s,%s' % (strMake, strModel, strFilm))
-    #pdb.gimp_message(gimp.image_list())
     for i, img in enumerate(gimp.image_list()):
-        #entries[i].set_text(img.filename)
         #print(img.filename)     #to see this print message run gimp from the command line
         cmd = 'exiv2 -M"set Exif.Image.Make %s" -M"set Exif.Image.Model %s" \
             -M"set Exif.Image.Software %s" -M"set Exif.Image.Artist %s" -M"set Exif.Image.Copyright %s" %s' % (strMake, strModel, strFilm, strName, strCopyRt, img.filename)
@@ -47,8 +42,8 @@ register(
         (PF_STRING, "string", "Make", 'Rolleiflex'),
         (PF_STRING, "string", "Model", '2.8FX'),
         (PF_STRING, "string", "image software(film)", 'Kodak Tmax 400'),
-        (PF_STRING, "string", "Artist", 'Stephen THORLEY'),
-        (PF_STRING, "string", "Copyright", "Copyright, Stephen THORLEY, 2018")
+        (PF_STRING, "string", "Artist", 'Me'),
+        (PF_STRING, "string", "Copyright", "Copyright, me, 2018")
         
     ],
     [],
