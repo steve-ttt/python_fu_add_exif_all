@@ -10,7 +10,7 @@ DEPENDIANCIES : this plugin requires exiv2 to be installed
 
 on fedora use:
 
-$ sudo dnf install exvi2
+$ sudo dnf install exiv2
 
 
 on ubuntu use:
